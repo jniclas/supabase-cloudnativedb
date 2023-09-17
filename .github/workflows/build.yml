@@ -47,5 +47,5 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          build-args:
-            PG_VERSION: ${{ PG_VERSION }}
+          build-args: |
+            PG_VERSION=${{ PG_VERSION }}
