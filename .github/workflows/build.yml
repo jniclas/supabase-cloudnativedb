@@ -39,7 +39,7 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,value=${{ PG_VERSION }}
+            type=raw,value=${{ env.PG_VERSION }}
       
       - name: Build and push Docker images
         uses: docker/build-push-action@v5
@@ -48,4 +48,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            "PG_VERSION=${{ PG_VERSION }}"
+            PG_VERSION=${{ env.PG_VERSION }}
