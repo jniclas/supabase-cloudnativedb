@@ -26,8 +26,8 @@ RUN apt install -y postgresql-common && /usr/share/postgresql-common/pgdg/apt.po
 # RUN set -xe; \
 RUN apt-get update; \
 	apt-get install -y --no-install-recommends \
-		"postgresql-$PG_MAJOR-pgaudit" \
-		"postgresql-$PG_MAJOR-pgvector" \
+		# "postgresql-$PG_MAJOR-pgaudit" \
+		# "postgresql-$PG_MAJOR-pgvector" \
 		"postgresql-${PG_MAJOR}-pg-failover-slots" \
 		# postgresql-15-pg-failover-slots \
 		# pg-pg${PG_MAJOR}-pg-failover-slots-1 \
