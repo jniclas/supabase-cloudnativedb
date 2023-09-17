@@ -24,8 +24,8 @@ RUN set -xe; \
 		"postgresql-${PG_MAJOR}-pgaudit" \
 		"postgresql-${PG_MAJOR}-pgvector" \
 		"postgresql-${PG_MAJOR}-pg-failover-slots" \
-	; \
-	rm -fr /tmp/* ; \
+	;
+RUN rm -fr /tmp/* ; \
 	rm -rf /var/lib/apt/lists/*;
 
 # Install barman-cloud
