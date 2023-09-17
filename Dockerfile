@@ -20,7 +20,7 @@ COPY requirements.txt /
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt install -y postgresql-common && /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+RUN apt install -y postgresql-common && /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
 
 # Install additional extensions
 # RUN set -xe; \

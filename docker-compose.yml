@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  postgres:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PG_VERSION: 15.1.0.118
+        PG_MAJOR: 15
