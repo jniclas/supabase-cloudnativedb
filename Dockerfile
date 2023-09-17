@@ -24,7 +24,8 @@ RUN apt-get update; \
 	apt-get install -y --no-install-recommends \
 		# "postgresql-$PG_MAJOR-pgaudit" \
 		# "postgresql-$PG_MAJOR-pgvector" \
-		"postgresql-${PG_MAJOR}-pg-failover-slots" \
+		# "postgresql-${PG_MAJOR}-pg-failover-slots" \
+		pg-failover-slots \
 	;
 RUN rm -fr /tmp/* ; \
 	rm -rf /var/lib/apt/lists/*;
