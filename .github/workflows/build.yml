@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PG_VERSION: 15.1.0.118
+      PG_MAJOR: 15
     permissions:
       packages: write
       contents: read
@@ -49,3 +50,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
             PG_VERSION=${{ env.PG_VERSION }}
+            PG_MAJOR=${{ env.PG_MAJOR }}

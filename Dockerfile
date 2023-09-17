@@ -2,13 +2,13 @@ ARG PG_VERSION
 
 FROM supabase/postgres:${PG_VERSION}
 
-ARG postgresql_major
-ARG postgresql_release
+ARG PG_VERSION
+ARG PG_MAJOR
 
 # Do not split the description, otherwise we will see a blank space in the labels
 LABEL name="PostgreSQL Container Images" \
       vendor="The CloudNativePG Contributors" \
-      version="${postgresql_release}" \
+      version="${PG_VERSION}" \
       release="10" \
       summary="PostgreSQL Container images." \
       description="This Docker image contains PostgreSQL and Barman Cloud based on Postgres 15.4-bullseye."
@@ -21,9 +21,9 @@ COPY requirements.txt /
 RUN set -xe; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-		"postgresql-${postgresql_major}-pgaudit" \
-		"postgresql-${postgresql_major}-pgvector" \
-		"postgresql-${postgresql_major}-pg-failover-slots" \
+		"postgresql-${PG_MAJOR}-pgaudit" \
+		"postgresql-${PG_MAJOR}-pgvector" \
+		"postgresql-${PG_MAJOR}-pg-failover-slots" \
 	; \
 	rm -fr /tmp/* ; \
 	rm -rf /var/lib/apt/lists/*;
