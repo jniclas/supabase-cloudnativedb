@@ -25,7 +25,7 @@ RUN apt-get update; \
 		# "postgresql-$PG_MAJOR-pgaudit" \
 		# "postgresql-$PG_MAJOR-pgvector" \
 		# "postgresql-${PG_MAJOR}-pg-failover-slots" \
-		pg-failover-slots \
+		pg-pg${PG_MAJOR}-pg-failover-slots-1 \
 	;
 RUN rm -fr /tmp/* ; \
 	rm -rf /var/lib/apt/lists/*;
