@@ -48,6 +48,8 @@ RUN apt-get update; \
 	pip3 install --no-deps -r requirements.txt; \
 	rm -rf /var/lib/apt/lists/*;
 
+COPY ./pg_ident.conf /postgresconf/pg_ident.conf
+
 # Change the uid of postgres to 26
 RUN usermod -u 26 postgres
 USER 26
