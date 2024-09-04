@@ -7,5 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        PG_VERSION: 15.1.0.118
+        PG_VERSION: 15.1.1.34
         PG_MAJOR: 15
+        BARMAN_VERSION: 3.11.1
