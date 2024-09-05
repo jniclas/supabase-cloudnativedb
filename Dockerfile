@@ -62,5 +62,6 @@ RUN set -xe; \
 	rm -rf /var/lib/apt/lists/*;
 
 # Change the uid of postgres to 26
-RUN usermod -u 26 postgres
-USER 26
+# not needed, we use the one from supabase (101:102)
+# RUN usermod -u 26 postgres
+# USER 26
