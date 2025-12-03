@@ -17,7 +17,7 @@ jobs:
     name: Push Docker image to multiple registries
     runs-on: ubuntu-latest
     env:
-      PG_VERSION: 15.14.1.060
+      PG_VERSION: 15.14.1.059
       PG_MAJOR: 15
     permissions:
       packages: write
