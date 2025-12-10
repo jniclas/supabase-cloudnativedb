@@ -47,9 +47,9 @@ RUN set -xe; \
 		python3-psycopg2 \
 		python3-setuptools \
 	; \
-	pip3 install  --upgrade pip; \
+	pip3 install --break-system-packages --upgrade pip; \
 	# TODO: Remove --no-deps once https://github.com/pypa/pip/issues/9644 is solved
-	pip3 install  --no-deps -r requirements.txt; \
+	pip3 install --break-system-packages --no-deps -r requirements.txt; \
 	# We require build dependencies to build snappy 0.6
 	# on Python 3.11 or greater.
 	# TODO: Remove build deps once barman unpins the snappy version or
