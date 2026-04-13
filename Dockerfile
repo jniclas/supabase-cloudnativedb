@@ -12,9 +12,9 @@ LABEL name="PostgreSQL Container Images" \
       version="${PG_VERSION}" \
       release="5" \
       summary="PostgreSQL Container images." \
-      description="This Docker image contains PostgreSQL and Barman Cloud based on Postgres 15.8-bullseye."
+      description="This Docker image contains PostgreSQL and Barman Cloud based on Postgres 15.14."
 
-LABEL org.opencontainers.image.description="This Docker image contains PostgreSQL and Barman Cloud based on Postgres 15.8-bullseye."
+LABEL org.opencontainers.image.description="This Docker image contains PostgreSQL and Barman Cloud based on Postgres 15.14."
 
 COPY requirements.txt /
 
@@ -47,9 +47,8 @@ RUN set -xe; \
 		python3-psycopg2 \
 		python3-setuptools \
 	; \
-	pip3 install  --upgrade pip; \
 	# TODO: Remove --no-deps once https://github.com/pypa/pip/issues/9644 is solved
-	pip3 install  --no-deps -r requirements.txt; \
+	pip3 install --break-system-packages --no-deps --ignore-installed -r requirements.txt; \
 	# We require build dependencies to build snappy 0.6
 	# on Python 3.11 or greater.
 	# TODO: Remove build deps once barman unpins the snappy version or

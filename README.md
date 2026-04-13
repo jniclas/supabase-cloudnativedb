@@ -73,7 +73,7 @@ db:
   image:
     repository: supabase/postgres
     pullPolicy: IfNotPresent
-    tag: "15.1.1.26"
+    tag: "15.14.1.059"
   imagePullSecrets: []
   replicaCount: 2
   nameOverride: ""
@@ -109,7 +109,7 @@ db:
   affinity: {}
 ```
 It is important to change the default Postgres user id and group, cause they are not set to 26 in the supabase image. I got them by running
-`docker run --rm -it supabase/postgres:15.1.1.26 getent passwd`
+`docker run --rm -it supabase/postgres:15.14.1.059 getent passwd`
 and at the point of creation oct 2023 I copied all migrations from https://github.com/supabase/postgres/tree/develop/migrations/db to my init.yaml: (I think I should change that to a better way that keeps it up to date...)
 ```
 apiVersion: v1
